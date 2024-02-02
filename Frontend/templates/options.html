@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options - Customer Segmentation App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose an Option</h1>
+        <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+            <ul>
+                <li><button type="button" onclick="selectOption('rfm')">RFM Analysis</button></li>
+                <li><button type="button" onclick="selectOption('churn')">Churn Prediction</button></li>
+                <li><button type="button" onclick="selectOption('attributes')">Attributes Based</button></li>
+                <li><button type="button" onclick="selectOption('attributes')">Visualization</button></li>
+            </ul>
+
+            <input type="file" id="rfm-upload" style="display: none" accept=".csv" name="file">
+            <input type="file" id="churn-upload" style="display: none" accept=".csv" name="file">
+            <input type="file" id="attributes-upload" style="display: none" accept=".csv" name="file">
+            
+            <button type="submit">Upload CSV</button>
+        </form>
+    </div>
+
+    <script>
+        function selectOption(option) {
+            // Trigger the file input associated with the selected option
+            document.getElementById(`${option}-upload`).click();
+        }
+    </script>
+</body>
+</html>

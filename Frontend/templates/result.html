@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - Customer Segmentation App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <!-- Display the result in a table or any suitable format -->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <th>Column 3</th>
+                    <th>Column 4</th>
+                    <th>Column 5</th>
+                    <!-- Add more columns as needed based on your result structure -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                    <tr>
+                        <td>{{ row.column1 }}</td>
+                        <td>{{ row.column2 }}</td>
+                        <td>{{ row.column3 }}</td>
+                        <td>{{ row.column4 }}</td>
+                        <td>{{ row.column5 }}</td>
+                        <!-- Display other columns as needed -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
