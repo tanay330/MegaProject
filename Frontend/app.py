@@ -14,6 +14,7 @@ def options():
 def upload():
     if 'file' not in request.files:
         return render_template('options.html', error='No file part')
+    
 
     file = request.files['file']
 
